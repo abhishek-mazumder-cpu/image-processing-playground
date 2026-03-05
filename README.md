@@ -69,8 +69,7 @@ iip.bat
 
 This script will:
 
-* Compile the C++ code
-* Generate `process.dll`
+* Check if the dependencies Pillow and numpy are installed
 * Launch the Python application
 
 ---
@@ -86,10 +85,11 @@ Open `process.cpp` and add your function.
 Your function **must follow this signature**:
 
 ```cpp
-// Use extern "C" to prevent name mangling so Python can find the function
+// Write the code inside extern "C" to prevent name mangling so Python can find the function
+// EXPORT is #defined __declspec(dllexport) 
 extern "C" {
 
-void your_function_name(
+EXPORT void your_function_name(
     unsigned char* image_data,
     int width,
     int height,
@@ -143,13 +143,25 @@ Simplified support is planned in future updates.
 ```
 IIP/
 │
-├── process.cpp        # C++ source containing image processing algorithms
-├── launcher.py        # Entry point for the Python application
-├── core.py            # Bridge between Python and the C++ shared library
-├── requirements.txt   # Python dependencies
+├── process.cpp             # C++ source containing image processing algorithms
+├── Makefile                # Compilation instructions for process.cpp
+├── core.py                 # Bridge between Python and the C++ shared library (ctypes)
+├── engine.py               # Graph traversal and processing logic
+├── image_utils.py          # Pillow and texture conversion utilities
+├── launcher.py             # Entry point / Bootstrap script
+├── main.py                 # Main ImageNodeApp class
+├── node_manager.py         # Node creation and linking logic
+├── persistence.py          # Saving and loading pipelines
+├── ui_manager.py           # Dear PyGui window layouts
+├── pipelines.json          # Saved user pipeline data
+├── README.md               # Project documentation
+├── requirements.txt        # Python dependencies
 │
 └── build/
-    └── iip.bat        # Windows automation script
+    ├── process.dll         # Your compiled C++ library
+    ├── iip.bat             # Windows automation/run script
+    ├── ...copy of the python files in the main directory 😅
+    └── output/             # Folder for exported processed images
 ```
 
 ---
