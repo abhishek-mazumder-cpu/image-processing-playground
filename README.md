@@ -185,7 +185,8 @@ Make sure `process.dll` is generated **in the same directory as `launcher.py`**.
 Install the required dependencies:
 
 ```bash
-pip install -r requirements.txt
+pyhton launcher.py
 ```
 
 ---
+
