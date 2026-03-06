@@ -153,11 +153,11 @@ IIP/
 ├── node_manager.py         # Node creation and linking logic
 ├── persistence.py          # Saving and loading pipelines
 ├── ui_manager.py           # Dear PyGui window layouts
-├── pipelines.json          # Saved user pipeline data
 ├── README.md               # Project documentation
 └── build/
     ├── process.dll         # Your compiled C++ library
     ├── iip.bat             # Windows automation/run script
+    ├── pipelines.json          # Saved user pipeline data
     ├── ...copy of the python files in the main directory 😅
     └── output/             # Folder for exported processed images
 ```
@@ -187,5 +187,6 @@ pyhton launcher.py
 ```
 
 ---
+
 
 
