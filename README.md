@@ -155,8 +155,6 @@ IIP/
 ├── ui_manager.py           # Dear PyGui window layouts
 ├── pipelines.json          # Saved user pipeline data
 ├── README.md               # Project documentation
-├── requirements.txt        # Python dependencies
-│
 └── build/
     ├── process.dll         # Your compiled C++ library
     ├── iip.bat             # Windows automation/run script
@@ -189,4 +187,5 @@ pyhton launcher.py
 ```
 
 ---
+
 
