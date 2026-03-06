@@ -157,7 +157,7 @@ IIP/
 └── build/
     ├── process.dll         # Your compiled C++ library
     ├── iip.bat             # Windows automation/run script
-    ├── pipelines.json          # Saved user pipeline data
+    ├── pipelines.json      # Saved user pipeline data
     ├── ...copy of the python files in the main directory 😅
     └── output/             # Folder for exported processed images
 ```
@@ -187,6 +187,7 @@ pyhton launcher.py
 ```
 
 ---
+
 
 
 
